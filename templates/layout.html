@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+  <title>ANIME FOR BEGINNERS!</title>
+  <meta name="description" content="Anime Beginner Site" />
+  <meta name="keywords" content="anime, action, horror, romance, comedy" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">		
+
+    <header>
+	  <div id="strapline">
+	    <div id="welcome_slogan">
+	      <h3>ANIME FOR BEGINNERS!</h3>
+	    </div><!--close welcome_slogan-->
+      </div><!--close strapline-->	  
+	  <nav>
+	    <div id="menubar">
+          <ul id="nav">
+            <li 
+            {% if selected == "home" %}
+            class="current"
+            {% endif %}
+            ><a href="/index">HOME</a></li>
+            <li
+            {% if selected == "action" %}
+            class="current"
+            {% endif %}
+            ><a href="action.html">ACTION</a></li>
+            <li
+            {% if selected == "comedy" %}
+            class="current"
+            {% endif %}
+            ><a href="comedy.html">COMEDY</a></li>
+            <li
+            {% if selected == "romance" %}
+            class="current"
+            {% endif %}
+            ><a href="romance.html">ROMANCE</a></li>
+            <li
+            {% if selected == "horror" %}
+            class="current"
+            {% endif %}
+            ><a href="horror.html">HORROR</a></li>
+            <li 
+            {% if selected == "database" %}
+            class="current"
+            {% endif %}
+            ><a href="database.html">DATABASE</a></li>
+          </ul>
+        </div><!--close menubar-->	
+      </nav>
+    </header>
+    
+    {%block content %}{% endblock %}
+    
+	</div><!--close site_content-->  	
+
+    <footer>
+	  <a href="/">HOME</a> | <a href="action.html">ACTION</a> | <a href="comedy.html">COMEDY</a> | <a href="romance.html">ROMANCE</a> | <a href="horror.html">HORROR</a><br/><br/>
+	  website template by <a href="http://www.freehtml5templates.co.uk">Free HTML5 Templates</a>
+    </footer>
+	
+  </div><!--close main-->
+  
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+  
+</body>
+</html>

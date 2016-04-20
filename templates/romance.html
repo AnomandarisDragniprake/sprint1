@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/LC&OD.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Romance</h2>
+            <p>These are our romance suggestions.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec1}}</h3>
+            <p>{{desc1}}</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec2}}</h3>
+            <p>{{desc2}}</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->  		
+       </div><!--close sidebar_container-->	
+	   
+	  <div id="content">
+        <div class="content_item">
+		  <h1>Romance</h1> 
+          <p>Romance in anime is an interesting genre to cover due to the fact that western shows will more often than not depict romance based shows and movies as being more feminine. This is not to say that all western shows that have romance in them are made to be feminine, but the majority of shows BASED around romance tend to favor a more feminine audience. The reason romance anime is more interesting to talk about than western romances is due to the many different kinds of "romances" that all get labeled as romance.</p>   		
+		  <p>In anime, there are just as many, if not more, "romances" aimed toward young men as there are aimed towards young women. While the ones aimed towards young women will often follow the same pure love stories as their Hollywood couterparts, there are also those side genre shows targeted towards specific audiences, such as shows that have guy-guy relationships. On the flip side of this, are the many girl-girl relationship shows targeted towards young men, as well as the far more sensualized animes. These shows can have one or more female characters all interested and seeking the love of a male character, and while the reverse situation also exists for female fans (one or more male characters chasing after a single female character) the biggest difference between romance animes for guys and girls is the sexualized nature most male targeted romance animes have. So, if your looking for a pure love show, aim for the more feminine looking shows.</p>
+	  
+		</div><!--close content_item-->
+      </div><!--close content--> 
+      
+      
+      <h1>Featured Videos</h1>
+      {% for post in clips %}
+      <h2>{{post.title}}</h2>
+      <iframe width="620" height="480" 
+            src=https://www.youtube.com/embed/{{post.vidlink}}></iframe>
+      <p>{{post.desc}}</p>
+      {% endfor %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/mgnk.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Recommendations</h2>
+            <p>These are our comedy recommendations.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec1}}</h3>
+            <p>{{desc1}}</p>        
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec2}}</h3>
+            <p>{{desc2}}</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->  		
+       </div><!--close sidebar_container-->	
+	   
+	  <div id="content">
+        <div class="content_item">
+		  <h1>Comedy</h1> 
+          <p>Comedy anime is probably the simplest anime, but it is also probably the easiest to enjoy. A comedy anime doesn't need the high production values and quality writing that animes of different genres often rely upon to be considered good; the reason being that people will consider a comedy anime good if it makes them laugh or entertains them. This also makes it easier to find a comedy anime you will enjoy, since they are often written simply enough that a viewer can figure out if they will like the show after just one episode.</p>   		
+		  <p>Like most genres, there are shows aimed specifically towards either guys or girls, as well as shows that were made to be enjoyed by everyone. Comedy is such a broad, opinionated genre, that you are bound to find something you like. Once you figure out what kind, or kinds, of comedy animes you like, it becomes much easier to find them as you will be able to look for similarities between shows you've liked in the past and shows you are just starting. If you are worried about seeing the same routine being used over and over, don't worry, there are so many different settings and characters in anime, you'll never have to see the same thing twice if you don't want to. Even if a scene is similar to one you've previously seen, it will usually be different enough to not feel stale while you're watching. The simply spectacular array of shows that can be found in the comedy genre making it a good starting point for anyone just beginning to watch anime.</p>
+	  
+		</div><!--close content_item-->
+      </div><!--close content-->  
+      
+      
+      <h1>Featured Videos</h1>
+      {% for post in clips %}
+      <h2>{{post.title}}</h2>
+      <iframe width="620" height="480" 
+            src=https://www.youtube.com/embed/{{post.vidlink}}></iframe>
+      <p>{{post.desc}}</p>
+      {% endfor %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div id="content">
+        <div class="content_item">
+		  <h1>Thanks for rating {{name}}.</h1> 
+          
+          <p>By rating {{name}}, you have helped give others a better idea of how good the show is. Thank you.</p>
+          
+          <form method="POST" action="/database.html">
+              <input type="submit" value="Return" />
+          </form>
+		</div><!--close content_item-->
+      </div><!--close content-->   
+{% endblock %}

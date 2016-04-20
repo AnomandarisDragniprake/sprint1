@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/anime_characters.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Recommendations</h2>
+            <p>On this sidebar, you'll see some of our recommendations for new fans.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+       </div><!--close sidebar_container-->	
+	   
+	  <div id="content">
+        <div class="content_item">
+		  <h1>An introduction to anime</h1> 
+          <p>This site was made to help those who are thinking of getting into the wonderful world of anime. On this site we'll attempt to provide new watchers with information to help them get the most out of their experience until they feel like they know what they are doing.</p>   		
+		  <p>This is not a complete site of all anime information. Instead, it is more of a very basic outline of four of the major genres one can find; action, romance, comedy, and horror. We'll look more into each genre on the other pages of this site. We are not going to try and persuade you that any one genre is better than another, because in the end, everyone is different and enjoys different things. This site is only going to attempt to provide a basic understanding of these four genres.</p>
+		  {%if didEdit %}
+		  <p><b>This site was last edited by {{edit.editor}} on {{edit.date}} at {{edit.time}}</b></p>
+		  {% else %}
+		  <p><b>This site has not been updated since {{edit.date}}.</b></p>
+		  {% endif %}
+		</div><!--close content_item-->
+      </div><!--close content-->   
+{% endblock %}

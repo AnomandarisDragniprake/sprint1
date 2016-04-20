@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/hu.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Recommendations</h2>
+            <p>These are our horror recommendations.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec1}}</h3>
+            <p>{{desc1}}</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec2}}</h3>
+            <p>{{desc2}}</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->  		
+       </div><!--close sidebar_container-->	
+	   
+	  <div id="content">
+        <div class="content_item">
+		  <h1>Horror</h1> 
+          <p>Horror animes come in many different forms, not all of which will seem like horror shows to all viewers. Just like there are many different kinds of horror films made by Hollywood, there are many different kinds of horror anime. Some are splatter happy gore-fests, while other may be more atmoshperic. Some might not even be scary, but their setting and premise may get them labeled as being from the horror genre. A viewers opinion on horror anime will ultimately be created by that viewers personal likes and dislikes. They may like some shows, but dislike others. This is fine as there are so many different animes, that no matter what a persons preference, they'll be able to find one they like.</p>   		
+		  
+		</div><!--close content_item-->
+      </div><!--close content-->  
+      
+      
+      <h1>Featured Videos</h1>
+      {% for post in clips %}
+      <h2>{{post.title}}</h2>
+      <iframe width="620" height="480" 
+            src=https://www.youtube.com/embed/{{post.vidlink}}></iframe>
+      <p>{{post.desc}}</p>
+      {% endfor %}
+{% endblock %}

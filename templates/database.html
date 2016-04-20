@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div id="content">
+        <div class="content_item">
+		  <h1>Search Our Database</h1> 
+          
+          <p>Search our database to see what ratings other people gave an anime.</p>
+          
+          <form method="POST" action="/adb.html">
+              
+              <table>
+                  <tr><td>Anime Name</td><td><input type="text" name="name1" /></td></tr>
+              </table>
+              <input type="submit" value="Search" />
+              
+          </form>
+          
+          <form method="GET" action="/all.html">
+              
+              <table>
+                  <input type="submit" value="Show All Entries for All Shows"/>
+              </table>
+          </form>
+          
+          <h2>Rate an Anime</h2>
+          
+          <p>Rate an anime you have watched.</p>
+          <p>*NOTE*</p> 
+          <p>The options for rating and enjoyment are different. A show can be very good but not be enjoyable. An example of this is we do not find Neon Genesis Evangelion very enjoyable, but we would still give it a high rating. Conversely, a show can be bad, but be very enjoyable, sort of like a B-grade movie.</p>
+          <p>*END NOTE*</p>
+          
+          <form method="POST" action="/rate.html">
+              
+              <table>
+                  <tr><td>Anime Name</td><td><input type="text" name="name" /></td></tr>
+                  <tr><td>Genre</td><td><input type="text" name="genre" /></td></tr>
+                  <tr><td>Genre 2</td><td><input type="text" name="genre2"/></td></tr>
+                  <tr><td>Genre 3</td><td><input type="text" name="genre3"/></td></tr>
+                  <tr><td>Rating</td>
+                  <td><select name="rating">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      </select></td>
+                  </tr>
+                  <tr><td>How Enjoyable?</td><td>Not Enjoyable<input type="range" name="enjoy" min="1" max="10" step="1" value="5"/>Very Enjoyable</td></tr>
+                  
+              </table>
+              
+              <input type="submit" value="Rate" />
+          </form>
+          
+		</div><!--close content_item-->
+      </div><!--close content-->   
+{% endblock %}

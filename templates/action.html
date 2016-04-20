@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/GL simon back.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div class="sidebar_container">       
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h2>Recommendations</h2>
+            <p>These are our action recommendations.</p>
+          </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->     		
+		<div class="sidebar">
+          <div class="sidebar_item">
+           <h3>{{rec1}}</h3>
+            <p>{{desc1}}</p> 
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->
+		<div class="sidebar">
+          <div class="sidebar_item">
+            <h3>{{rec2}}</h3>
+            <p>{{desc2}}</p>         
+		  </div><!--close sidebar_item--> 
+        </div><!--close sidebar-->  		
+       </div><!--close sidebar_container-->	
+	   
+	  <div id="content">
+        <div class="content_item">
+		  <h1>ACTION</h1> 
+          <p>Action is one of the central genres in anime, as it is the core of some of the most popular shows, some of which are recognizable to people who don't even watch anime. These shows include; DragonBall Z, Naruto, One Piece, Fairy Tail, and Bleach. All of these shows a well known, but they don't even come close to comprising all there is to find in the action genre.</p>   		
+		  <p>The action genre is centered around combat/fight scenes, often involving a central main character, who will face multiple enemies throughout the story. While the more popular shows, such as DragonBall Z, can be daunting to start because of their high episode counts, many other excellet action shows have far fewer episodes, and are often better overall shows than the more well known ones. Shows like Full Metal Alchemis: Brotherhood and Gurren Lagann have far fewer episodes, but this only serves to improve the show as the viewer is not subjected to long periods of filler. For a new fan, we recommend checking out some of these lower episode shows first, as we think they will provide more entertainment early on.</p>
+		</div><!--close content_item-->
+      </div><!--close content-->
+      
+      <h1>Featured Videos</h1>
+      {% for post in clips %}
+      <h2>{{post.title}}</h2>
+      <iframe width="620" height="480" 
+            src=https://www.youtube.com/embed/{{post.vidlink}}></iframe>
+      <p>{{post.desc}}</p>
+      {% endfor %}
+      
+      
+{% endblock %}

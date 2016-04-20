@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="slideshow_container">  
+	  <div class="slideshow">
+	    <ul class="slideshow">
+          <li class="show"><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;Anime, it's AWESOME!&quot;" /></li>
+          <li><img width="940" height="250" src="static/images/a_characters.jpg" alt="&quot;You shall learn&quot;" /></li>
+        </ul> 
+	  </div><!--close slideshow-->  	
+	</div><!--close slideshow_container-->   
+	
+	<div id="site_content">	
+	  <div id="content">
+        <div class="content_item">
+		  <h1>Results</h1> 
+          
+          <table>
+          	<tr><th>Name</th><th>Genre 1</th><th>Genre 2</th><th>Genre 3</th><th>Rating</th><th>Enjoy</th></tr>
+          	{% for results in animes %}
+          	<tr><td>{{results[0]}}</td><td>{{results[1]}}</td><td>{{results[2]}}</td><td>{{results[3]}}</td><td>{{results[4]}}</td><td>{{results[5]}}</td></tr>
+          	{% endfor %}
+          </table>
+          
+          <form method="POST" action="/database.html">
+              <input type="submit" value="Return" />
+          </form>
+          
+		</div><!--close content_item-->
+      </div><!--close content-->   
+{% endblock %}
